@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+
+<nav role='navigation'>
+  <div id="menuToggle">
+
+    <input type="checkbox" />
+
+    <span></span>
+    <span></span>
+    <span></span>
+    
+    <ul id="menu">
+      <a class='menuTitle' href="#"><li>Home</li></a>
+
+      <!-- PRODUCTS -->
+      <button class="dropdown-btn menuTitle">
+        Products
+        <i class="fas fa-chevron-circle-down"></i>
+      </button>
+      <div class="dropdown-container">
+        <a href="#">Reading Plus</a>
+        <a href="#">Symphony Math</a>
+        <a href="#">RedboxVR</a>
+      </div>
+
+
+      <!-- COMPANY -->
+      <button class="dropdown-btn menuTitle">
+        Company
+        <i class="fas fa-chevron-circle-down"></i>
+      </button>
+      <div class="dropdown-container">
+        <a href="#">About Us</a>
+        <a href="#">Team</a>
+        <a href="#">Where We Reach</a>
+      </div>
+
+
+      <a class='menuTitle' href="#"><li>Contact</li></a>
+    </ul>
+  </div>
+</nav>
+
+<!-- SCRIPT -->
+<script>
+  //* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+  var dropdown = document.getElementsByClassName('dropdown-btn');
+  var i;
+
+  for (i = 0; i < dropdown.length; i++) {
+    dropdown[i].addEventListener('click', function () {
+      this.classList.toggle('active');
+      var dropdownContent = this.nextElementSibling;
+      if (dropdownContent.style.display === 'inline-grid') {
+        dropdownContent.style.display = 'none';
+      } else {
+        dropdownContent.style.display = 'inline-grid' ;
+      }
+
+    });
+  }
+</script>
+  </body>
+
+</html>
